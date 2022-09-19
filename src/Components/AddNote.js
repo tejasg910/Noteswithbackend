@@ -23,7 +23,8 @@ const AddNote = (props) => {
 
     
   return (
-    <form>
+    <div className="d-flex justify-content-center">
+    <form className='addnotecontainer'>
     <div className="mb-3">
       <label htmlFor="exampleInputEmail1" className="form-label">
         Title
@@ -43,7 +44,7 @@ const AddNote = (props) => {
       <label htmlFor="exampleInputPassword1" className="form-label">
         Description
       </label>
-      <input
+      <textarea
         type="text"
         className="form-control"
         id="description"
@@ -71,6 +72,7 @@ const AddNote = (props) => {
       Add Note
     </button>
   </form>
+  </div>
   )
 }
 

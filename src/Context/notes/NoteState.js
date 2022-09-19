@@ -92,7 +92,7 @@ type: type
       method: "PUT",
       headers: {
         "Content-Type": "Application/json",
-        "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjMyNjAwOTljY2Q0NmRlOTYyM2I5MDQ1In0sImlhdCI6MTY2MzQzNDkzOH0.LNxvqEBEn7qe5EUEZR13ObfPASr0RjR61AJPZaSVGQA"
+        "auth-token": localStorage.getItem('token')
 
       },
       body: JSON.stringify({title, description, tag}),
@@ -135,7 +135,7 @@ try{
       method: "DELETE",
       headers: {
         "Content-Type": "Application/json",
-        "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjMyNjAwOTljY2Q0NmRlOTYyM2I5MDQ1In0sImlhdCI6MTY2MzQzNDkzOH0.LNxvqEBEn7qe5EUEZR13ObfPASr0RjR61AJPZaSVGQA"
+        "auth-token": localStorage.getItem('token')
 
       },
     
