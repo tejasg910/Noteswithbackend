@@ -25,6 +25,8 @@ const host = 'http://localhost:5000';
 
 const [alert, setAlert]=  useState(null)
 const [userData, setUserData] = useState(initialUsers)
+const [tag, setTag] = useState('home')
+
 const showAlert = (message, type)=>{
   setAlert({
 message: message,
@@ -200,7 +202,7 @@ setUserData(jsonformat)
 
 
   return (
-    <NoteContext.Provider value={{ notes, setNotes, addingNote, deleteNote, getNotes, editNote, showAlert, alert, getusers, userData }}>
+    <NoteContext.Provider value={{ notes, setNotes, addingNote, deleteNote, getNotes, editNote, showAlert, alert, getusers, userData, tag, setTag }}>
       {props.children}
     </NoteContext.Provider>
   );

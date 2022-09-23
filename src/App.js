@@ -11,10 +11,12 @@ import { useState } from "react";
 import noteContext from "./Context/notes/noteContext";
 import { useContext } from "react";
 import Users from "./Components/Users";
+import Showtags from "./Components/Showtags";
 
 function App() {
 
-  
+  const context = useContext(noteContext);
+//  const {tag} = context;
   return (
     <>
      <NoteState>
@@ -28,6 +30,8 @@ function App() {
                <Route path="login" element={<Login />} />
                <Route path="signup" element={<Signup  />} />
                <Route path="users" element={<Users  />} />
+               <Route path='showtag' element={<Showtags  />} />
+
 
 
                

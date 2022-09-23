@@ -1,18 +1,17 @@
 import React, { useContext, useRef, useState } from 'react'
+import { Link } from 'react-router-dom';
 import noteContext from '../Context/notes/noteContext';
 // import { useContext } from 'react';
 const NoteItem = (props) => {
   const context = useContext(noteContext);
-  const { deleteNote, showAlert } = context;
+  const { deleteNote, showAlert, setTag } = context;
   const { note, updateNote } = props;
   // console.log(note.tag.split(" "))
   let arr = note.tag.split(" ");
   arr = arr.filter((data)=>{
     return /\S/.test(data);
   });
-const getTag = ()=>{
 
-}
   return (
 <>
     <div className="col md-3">
@@ -37,7 +36,7 @@ const getTag = ()=>{
     {arr.map((arr) => {
         return <ul class="tags">
 
-          <li><a href="#" onClick={getTag} class="tag">{arr}</a></li>
+          <li><Link to='showtag' onClick={()=>{setTag(arr)}} class="tag">{arr}</Link></li>
         </ul>
       })}
     </div>
