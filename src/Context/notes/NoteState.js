@@ -1,5 +1,6 @@
 import { compareSync } from "bcryptjs";
 import { useState } from "react";
+import { json } from "react-router-dom";
 import NoteContext from "./noteContext";
 
 const NoteState = (props) => {
@@ -19,11 +20,11 @@ const NoteState = (props) => {
   // }
 const host = 'http://localhost:5000';
   const initialNotes = [];
-
+  const initialUsers = [];
   const [notes, setNotes] = useState(initialNotes);
 
 const [alert, setAlert]=  useState(null)
-
+const [userData, setUserData] = useState(initialUsers)
 const showAlert = (message, type)=>{
   setAlert({
 message: message,
@@ -150,8 +151,56 @@ try{
   }
   };
 
+
+  const getusers = async() => {
+   
+
+  const response  = await  fetch(`${host}/api/auth/getusers`, {
+            method: "GET",
+            headers: {
+              "Content-Type": "Application/json",
+            }
+          });
+const jsonformat = await response.json();
+// console.log(jsonformat)
+setUserData(jsonformat)
+// console.log(userData)
+
+
+//      fetch(`${host}/api/auth/getusers`, {
+//       method: "GET",
+//       headers: {
+//         "Content-Type": "Application/json",
+
+
+//       },
+    
+//     }).then((res)=>{
+//       return res.json()
+//     }).then((data)=>{
+//       // console.log(data)
+
+//       setUsers(data)
+//       console.log(users)
+  
+     
+
+
+
+
+//     }).catch((err)=>{
+// console.log(err)
+//     });
+
+
+   
+
+  };
+
+
+
   return (
-    <NoteContext.Provider value={{ notes, setNotes, addingNote, deleteNote, getNotes, editNote, showAlert, alert }}>
+    <NoteContext.Provider value={{ notes, setNotes, addingNote, deleteNote, getNotes, editNote, showAlert, alert, getusers, userData }}>
       {props.children}
     </NoteContext.Provider>
   );

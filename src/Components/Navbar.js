@@ -26,6 +26,9 @@ const handleLogout= ()=>{
           <li className="nav-item">
             <Link className={`nav-link ${location.pathname==="/about"}?"active":""`} to="about">About</Link>
           </li>
+          <li className="nav-item">
+            <Link className={`nav-link ${location.pathname==="/users"}?"active":""`} to="users">Users</Link>
+          </li>
         
         </ul>
 

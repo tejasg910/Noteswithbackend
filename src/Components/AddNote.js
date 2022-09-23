@@ -23,7 +23,10 @@ const AddNote = (props) => {
 
     
   return (
-    <div className="d-flex justify-content-center">
+    <>
+    <div className="d-flex flex-column  align-items-center">
+   <h2>Just fill input fields to add the Note...</h2>
+     
     <form className='addnotecontainer'>
     <div className="mb-3">
       <label htmlFor="exampleInputEmail1" className="form-label">
@@ -73,6 +76,7 @@ const AddNote = (props) => {
     </button>
   </form>
   </div>
+  </>
   )
 }
 

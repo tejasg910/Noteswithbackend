@@ -130,3 +130,29 @@ i{
 .tag:hover::after {
    border-left-color: crimson; 
 }
+.allusercontainer{
+  background-color: rgb(252, 250, 250);
+  padding: 10px;
+  margin: 7px 0;
+  border-radius: 7px;
+  width: 40rem;
+  display: flex;
+  justify-content: space-between;
+
+}
+.allusercontainer .info{
+  flex-direction: column;
+}
+.allusercontainer .name {
+  font-size: 20px;
+}
+
+.allusercontainer .date{
+  color: green;
+
+
+}
+
+.sociallinks a{
+  text-decoration: none;
+}

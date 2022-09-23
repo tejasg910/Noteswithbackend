@@ -8,7 +8,7 @@ require('./db')
 const app = express();
 app.use(express.json())
 app.use(cors())
-const port  = 5000;
+const port  =  5000;
 
 app.get('/', (req, res)=>{
     res.send("hello bhai");

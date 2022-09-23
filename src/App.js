@@ -10,6 +10,7 @@ import Login from "./Components/Login";
 import { useState } from "react";
 import noteContext from "./Context/notes/noteContext";
 import { useContext } from "react";
+import Users from "./Components/Users";
 
 function App() {
 
@@ -26,6 +27,8 @@ function App() {
                <Route path="about" element={<About />} />
                <Route path="login" element={<Login />} />
                <Route path="signup" element={<Signup  />} />
+               <Route path="users" element={<Users  />} />
+
 
                
           </Route>

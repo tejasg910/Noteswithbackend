@@ -136,6 +136,21 @@ router.get('/getdata', fetchuser, async (req, res)=>{
   }
   
 })
+
+
+router.get('/getusers', async (req, res)=>{
+
+  try {
+    
+  const userData = await User.find({}).select('-password');
+  res.send(userData)
+  } catch (error) {
+
+    console.log(error.message)
+    
+  }
+  
+})
 module.exports = router;
 
 //here we have exported the data from the server through our router 

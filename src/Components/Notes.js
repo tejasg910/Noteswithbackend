@@ -100,7 +100,7 @@ const inputVal = (e)=>{
                   <label htmlFor="exampleInputPassword1" className="form-label">
                     Description
                   </label>
-                  <input
+                  <textarea
                     type="text"
                     className="form-control"
                     id="description"

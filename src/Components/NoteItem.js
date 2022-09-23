@@ -5,8 +5,14 @@ const NoteItem = (props) => {
   const context = useContext(noteContext);
   const { deleteNote, showAlert } = context;
   const { note, updateNote } = props;
-  console.log(note.tag.split(" "))
-  const arr = note.tag.split(" ")
+  // console.log(note.tag.split(" "))
+  let arr = note.tag.split(" ");
+  arr = arr.filter((data)=>{
+    return /\S/.test(data);
+  });
+const getTag = ()=>{
+
+}
   return (
 <>
     <div className="col md-3">
@@ -31,7 +37,7 @@ const NoteItem = (props) => {
     {arr.map((arr) => {
         return <ul class="tags">
 
-          <li><a href="#" class="tag">{arr}</a></li>
+          <li><a href="#" onClick={getTag} class="tag">{arr}</a></li>
         </ul>
       })}
     </div>
